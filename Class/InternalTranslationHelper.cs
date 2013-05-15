@@ -12,13 +12,10 @@ namespace testlocal.Class
 {
     public class InternalTranslationHelper
     {
-        public bool areTranslatorsAvailableFor(Sitecore.Data.ID languageNodeID)
+        public bool areTranslatorsAvailableFor(string languageNodeId)
         {
             var flag = false;
-            Sitecore.Data.Database master = Sitecore.Data.Database.GetDatabase("master");
-            Assert.IsNotNull(master,"No Master DB  found");
-            Item languageNode = master.GetItem(languageNodeID);
-            Assert.IsNotNull(languageNode, "No languageNode found");
+            var languageNode = this.getlanguageNodeFromMasterDb(languageNodeId);
             Sitecore.Data.Fields.MultilistField multilistField = languageNode.Fields["Translators"];
             if (multilistField.Count == 0)
                 return flag;
@@ -35,8 +32,14 @@ namespace testlocal.Class
             return flag;
         }
 
-
-
+        private Item getlanguageNodeFromMasterDb(string languageNodeId)
+        {
+            Sitecore.Data.Database master = Sitecore.Data.Database.GetDatabase("master");
+            Assert.IsNotNull(master, "No Master DB  found");
+            Item languageNode = master.GetItem(languageNodeId);
+            Assert.IsNotNull(languageNode, "No languageNode found");
+            return languageNode;
+        }
 
         public void process(Sitecore.Data.ID sourceId, IList<String> languageNodeIds) 
         {
@@ -49,12 +52,9 @@ namespace testlocal.Class
 
         private void createNewVerion(Sitecore.Data.ID sourceId, string languageNodeId) 
         {
-            Sitecore.Data.Database master = Sitecore.Data.Database.GetDatabase("master");
-            Assert.IsNotNull(master, "No Master DB  found");
-            Item languageNode = master.GetItem(languageNodeId);
-            Assert.IsNotNull(languageNode, "No languageNode found");
-            Sitecore.Data.Fields.InternalLinkField t1 =(Sitecore.Data.Fields.InternalLinkField) languageNode.Fields["Language"];
-            Sitecore.Globalization.Language targetLang = Language.Parse(t1.TargetItem.Name);           
+            var languageNode = this.getlanguageNodeFromMasterDb(languageNodeId);
+            var languageField =(Sitecore.Data.Fields.InternalLinkField) languageNode.Fields["Language"];
+            var targetLang = Language.Parse(languageField.TargetItem.Name);           
             Item newVersion = Sitecore.Context.ContentDatabase.GetItem(sourceId, targetLang);
             try
             {

@@ -74,7 +74,7 @@ namespace testlocal.Class
             var helper = new InternalTranslationHelper();
             foreach (Item item in root.Children)
             {
-                if (helper.areTranslatorsAvailableFor(item.ID))
+                if (helper.areTranslatorsAvailableFor(item.ID.ToString()))
                 {
 
                     Sitecore.Web.UI.HtmlControls.Checkbox test = new Sitecore.Web.UI.HtmlControls.Checkbox();
