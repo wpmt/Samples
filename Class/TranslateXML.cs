@@ -38,16 +38,21 @@ namespace testlocal.Class
                     this.Button.Disabled = true;
                 }
             }
-     
-        }
-
-        private void init()
-        {
             var id = WebUtil.GetQueryString("id");
             Sitecore.Diagnostics.Assert.IsNotNullOrEmpty(id, "No id passed");
             Sitecore.Data.Database master = Sitecore.Data.Database.GetDatabase("master");
             source = master.GetItem(id);
             Title.Text = source.DisplayName;
+     
+        }
+
+        private void init()
+        {
+            //var id = WebUtil.GetQueryString("id");
+            //Sitecore.Diagnostics.Assert.IsNotNullOrEmpty(id, "No id passed");
+            //Sitecore.Data.Database master = Sitecore.Data.Database.GetDatabase("master");
+            //source = master.GetItem(id);
+            //Title.Text = source.DisplayName;
             //Culture way to doing this?
             ReadyByDatePicker.Value = DateUtil.ToIsoDate(DateTime.Now.AddDays(7));
         }
@@ -62,7 +67,7 @@ namespace testlocal.Class
         {
             
             Sitecore.Data.Database master = Sitecore.Data.Database.GetDatabase("master");
-            Item root = master.GetItem("/sitecore/content/Meta/internalTranslation/Languages");
+            Item root = master.GetItem("/sitecore/content/MetaData/Global Data/internalTranslation/Languages");
             Sitecore.Diagnostics.Assert.IsNotNull(root, "item null");
             CBList.Controls.Clear();
             Edit.Value = String.Empty;
@@ -84,17 +89,24 @@ namespace testlocal.Class
         protected void MessageButton(Message message)
         {
             Edit.Value = "";
-
+            var helper = new InternalTranslationHelper();
+            var list = new List<string>();
             foreach (var control in CBList.Controls)
             {
                 if (control.GetType() == typeof(Sitecore.Web.UI.HtmlControls.Checkbox))
                 {
                     var cb = ((Sitecore.Web.UI.HtmlControls.Checkbox)control);
 
+                    if(cb.Checked)
+                    {
+                        //helper.createNewVerion(source.ID, cb.ID);
+                        list.Add(cb.ID);
+                    }
                     Edit.Value += ("  " + cb.Header + ":" + cb.Checked);
                 }
-
             }
+            helper.process(source.ID, list);
+            Windows.Close(CloseMethod.CloseWindow);
         } 
     }
 
