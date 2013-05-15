@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--=============================================================
+    File: TestXML.xml                                                   
+    Created by: sitecore\admin                                       
+    Created: 14/05/2013 11:26:27                                               
+==============================================================-->
+
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <TestXML>
+    <FormPage>
+      <Toolbar>
+        <Toolbutton Header="Close" Icon="applications/32x32/exit.png" Click="internalTranslate:close" />
+      </Toolbar>
+      <CodeBeside Type="testlocal.Class.TranslateXML,testlocal"/>
+      <h2>Translate <Literal ID="Title" /></h2>
+
+      <GridPanel  Height="400px"  Width="100%" Fixed="true" Background="green">
+        
+        <Scrollbox ID="Summary" Width="100%" Height="400px" GridPanel.Style="padding:14px 4px 0px 4px" GridPanel.Height="100%">
+          <GridPanel ID="CBList" Columns="1" Cellpadding="2">
+            
+          </GridPanel>
+        </Scrollbox>
+      </GridPanel>
+      
+      
+      <Border align="center">
+        <Edit ID="Edit" Width="300" />
+        
+      </Border>
+
+
+      <Border align="left">
+        <Border Align="Center" Padding="0 0 8 0">
+          <GridPanel Columns="3">
+            <Literal Text="Ready By:" Click="Refresh" GridPanel.VAlign="top"/>
+            <DatePicker ID="ReadyByDatePicker" Width="200" />
+          </GridPanel>
+        </Border>
+      </Border>
+      
+      <Border align="center">
+        <Button Header="Translate" Click="internalTranslate:actionbutton" ID="Button"/>
+      </Border>
+      
+
+    </FormPage>
+  </TestXML>
+</control>
