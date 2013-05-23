@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ADB9A6DA-94D5-4DD0-8931-5FB37C5E6FBD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aqueduct.SiteCore.Extension</RootNamespace>
+    <AssemblyName>Aqueduct.SiteCore.Extension</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aqueduct.Toggles">
+      <HintPath>..\..\packages\Aqueduct.Toggles.2.0.0.38\lib\net40\Aqueduct.Toggles.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentArt.Web.UI, Version=2010.1.2637.35, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\ComponentArt.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ITHit.WebDAV.Server, Version=2.1.1.108, Culture=neutral, PublicKeyToken=d057f7b1134051b5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\ITHit.WebDAV.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Lemon, Version=3.5.0.224, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Lemon.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.3.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mvp.Xml, Version=2.0.2158.1055, Culture=neutral, PublicKeyToken=dd92544dc05f5671, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Mvp.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RadEditor.Net2, Version=7.2.0.0, Culture=neutral, PublicKeyToken=852c9eb6525c1b53, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\RadEditor.Net2.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Apps.Loader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Apps.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Automation.MarketingAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Automation.MarketingAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="sitecore.nexus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\sitecore.nexus.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.NVelocity, Version=0.4.2.8580, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Oracle, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Oracle.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Publishing.WebDeploy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Publishing.WebDeploy.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Update, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Update.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Zip, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Sitecore.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2009.3.600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Database, Version=2009.3.600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Stimulsoft.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2009.3.600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web, Version=2009.3.600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Stimulsoft.Report.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.WebDesign, Version=2009.3.600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Stimulsoft.Report.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Web.UI, Version=2011.1.315.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Sitecore-6.5-120427\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddVersionRecursiveCommand.cs" />
+    <Compile Include="RibbonCopyFromLanguage.cs" />
+    <Compile Include="GalleryLanguagesForm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebEditCopyFromLanguage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Config\FeatureToggles.config" />
+    <None Include="App_Config\Include\Aqueduct.Toggles.config" />
+    <None Include="packages.config" />
+    <None Include="Sitecore\VersionFromLanguage.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Package\VersionFromLanguage.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Sitecore\Gallery Languages.CopyFrom.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

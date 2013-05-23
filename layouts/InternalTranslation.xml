@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--=============================================================
+    File: InternalTranslation.xml                                                   
+    Created by: sitecore\admin                                       
+    Created: 14/05/2013 11:26:27                                               
+==============================================================-->
+
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <InternalTranslation>
+    <FormPage  Background="silver">
+      <Toolbar>
+        <Toolbutton Header="Close" Icon="applications/32x32/exit.png" Click="internalTranslate:close" ID="CloseButton" />
+      </Toolbar>
+      <CodeBeside Type="ManCity.Site.Classes.InternalTranslation.InternalTranslation, ManCity.Site"/>
+      <GridPanel width="650px" Background="green" height="300px">
+        <Border Align="Center" Background="silver"  Width="650px" >
+
+          <GridPanel Columns="2" width="650px" >
+            <h2 Align="Left" Grid.Column="1">
+              Translate <Literal ID="Title" />
+            </h2>
+            <GridPanel Grid.Column="2" Columns="2" float="right">
+              <Literal Grid.Column="1"  Text="Ready By:" />
+              <DatePicker  Grid.Column="2"  ID="ReadyByDatePicker"  />
+            </GridPanel>
+          </GridPanel>
+          <GridPanel Columns="2" width="650px">
+            <GridPanel Grid.Column="1" Width="325px" GridPanel.VAlign="top">
+              <Literal Grid.Row="1"  Text="Available Languages:"/>
+              <Scrollbox GRid.Row="2" ID="Summary"  Background="transparent"  Width="325px" GridPanel.VAlign="top">
+                <GridPanel Align="Left" ID="CBList" Columns="1"  />
+              </Scrollbox>
+            </GridPanel>
+            <GridPanel Grid.Column="2" margin-left="325px" Width="325px" >
+              <Literal Grid.Row="1"  Text="Additional Text:"/>
+              <Memo Grid.Row="2"  ID="AdditionalText"  Width="325px" Height="200px"  />
+            </GridPanel>
+          </GridPanel>
+
+        </Border>
+
+        <Border align="left"  width="650px" >
+        
+          <Button Header="Cancel" Click="internalTranslate:cancelbutton" ID="CancelButton" float="right" />
+          <Button Header="Translate" Click="internalTranslate:actionbutton" ID="ActionButton" float="right" />
+        </Border>
+      </GridPanel>
+
+      <GridPanel width="650px" Background="blue" height="300px" ID="BulkList" GridPanel.VAlign="top" Visible="false">
+        <h4>
+          <Literal  Text="Selected Bulk Translate Items" GridPanel.VAlign="top"/>
+        </h4>
+        <Scrollbox  margin-left="10px"   Background="transparent"  GridPanel.VAlign="top" height="300px">
+          <Literal ID="ListOfitems"/>
+        </Scrollbox>
+      </GridPanel>
+       </FormPage>
+
+  </InternalTranslation>
+</control>
